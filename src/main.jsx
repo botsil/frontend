@@ -7,23 +7,29 @@ import ArticlesPage from "./pages/ArticlesPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import ManualsPage from "./pages/ManualsPage.jsx";
 import MembersPage from "./pages/MembersPage.jsx";
+import Layout from "./App";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/articles",
-    element: <ArticlesPage />,
-  },
-  {
-    path: "/manuals",
-    element: <ManualsPage />,
-  },
-  {
-    path: "/members",
-    element: <MembersPage />,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/articles",
+        element: <ArticlesPage />,
+      },
+      {
+        path: "/manuals",
+        element: <ManualsPage />,
+      },
+      {
+        path: "/members",
+        element: <MembersPage />,
+      },
+    ],
   },
 ]);
 
