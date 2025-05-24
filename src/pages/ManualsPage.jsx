@@ -1,6 +1,6 @@
 function ManualsPage() {
   return (
-    <div>
+    <div className="p-50 font-bold text-5xl">
       <h1>ManualsPage</h1>
     </div>
   );
