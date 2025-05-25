@@ -19,7 +19,7 @@ export default function MembersPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-10 pl-20 pr-20">
+    <div className="min-h-screen bg-gray-100 pt-10 px-20">
       <h1 className="text-6xl font-bold font-orbitron text-center pb-10">
         Nossa Equipe
       </h1>

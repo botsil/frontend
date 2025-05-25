@@ -2,7 +2,7 @@ export function MemberCard({ member, isExpanded, onMouseOver }) {
   return (
     <button
       className={`flex flex-col items-center transition-all duration-400 ${
-        isExpanded ? "w-112 h-112" : "w-80 h-80"
+        isExpanded ? "w-[28rem] h-[28rem]" : "w-80 h-80"
       }`}
       onMouseOver={onMouseOver}
     >
