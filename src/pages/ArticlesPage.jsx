@@ -1,9 +1,27 @@
-function ArticlesPage() {
+import { DocumentCard } from "../components/DocumentCard";
+import testePDF from "../assets/teste.pdf";
+
+export default function ArticlesPage() {
+  const articles = [
+    { id: 1, title: "Artigo Científico", url: testePDF },
+    { id: 2, title: "Pesquisa Recente", url: testePDF },
+    { id: 3, title: "Inovações Tecnológicas", url: testePDF },
+  ];
+
   return (
-    <div className="p-12 font-bold text-5xl">
-      <h1>ArticlesPage</h1>
+    <div className="min-h-screen bg-gray-100 pt-10 px-20">
+      <h1 className="text-6xl font-bold font-orbitron text-center pb-10">
+        Artigos Publicados
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 justify-items-center">
+        {articles.map((article) => (
+          <DocumentCard
+            key={article.id}
+            title={article.title}
+            documentUrl={article.url}
+          />
+        ))}
+      </div>
     </div>
   );
 }
-
-export default ArticlesPage;
