@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { MemberCard } from "../components/MemberCard";
 import joao from "../assets/joao.jpg";
 import maria from "../assets/maria.jpg";
 import marcos from "../assets/marcos.jpg";
 
 export default function MembersPage() {
-  const [expandedId, setExpandedId] = useState(null);
-
   const members = [
     { id: 1, name: "João Silva", photo: joao },
     { id: 2, name: "Maria Souza", photo: maria },
@@ -25,14 +22,7 @@ export default function MembersPage() {
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 justify-items-center">
         {members.map((member) => (
-          <MemberCard
-            key={member.id}
-            member={member}
-            isExpanded={expandedId === member.id}
-            onClick={() =>
-              setExpandedId(expandedId === member.id ? null : member.id)
-            }
-          />
+          <MemberCard key={member.id} member={member} />
         ))}
       </div>
     </div>
