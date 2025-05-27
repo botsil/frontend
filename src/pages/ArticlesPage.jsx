@@ -1,11 +1,11 @@
 import { DocumentCard } from "../components/DocumentCard";
-import testePDF from "../assets/teste.pdf";
+import teste from "../assets/teste.pdf";
 
 export default function ArticlesPage() {
   const articles = [
-    { id: 1, title: "Artigo Científico", url: testePDF },
-    { id: 2, title: "Pesquisa Recente", url: testePDF },
-    { id: 3, title: "Inovações Tecnológicas", url: testePDF },
+    { id: 1, title: "Manual de Robótica", url: teste },
+    { id: 2, title: "Guia de Competição", url: teste },
+    { id: 3, title: "Instruções Técnicas", url: teste },
   ];
 
   return (
