@@ -19,17 +19,17 @@ export default function MembersPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-10 px-20">
-      <h1 className="text-6xl font-bold font-orbitron text-center pb-10">
+    <div className="min-h-screen bg-gray-100 pt-10 px-4 md:px-20">
+      <h1 className="text-4xl md:text-6xl font-bold font-orbitron text-center pb-10">
         Nossa Equipe
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 justify-items-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 justify-items-center">
         {members.map((member) => (
           <MemberCard
             key={member.id}
             member={member}
             isExpanded={expandedId === member.id}
-            onMouseOver={() =>
+            onClick={() =>
               setExpandedId(expandedId === member.id ? null : member.id)
             }
           />

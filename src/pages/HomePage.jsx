@@ -37,7 +37,7 @@ export default function Home() {
             nosso superpoder.
           </p>
         </div>
-        <div className="md:w-[45%] md:ml-auto aspect-square relative">
+        <div className="md:w-[45%] md:ml-auto md:aspect-square h-64 md:h-auto w-full relative max-w-[90vw] md:max-w-none mx-auto">
           {images.map((img, i) => (
             <img
               key={i}

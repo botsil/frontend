@@ -1,10 +1,10 @@
-export function MemberCard({ member, isExpanded, onMouseOver }) {
+export function MemberCard({ member, isExpanded, onClick }) {
   return (
     <button
-      className={`flex flex-col items-center transition-all duration-400 ${
-        isExpanded ? "w-[28rem] h-[28rem]" : "w-80 h-80"
+      className={`flex flex-col items-center transition-all duration-600 ${
+        isExpanded ? "w-[25rem] h-[25rem]" : "w-40 h-40 md:w-80 md:h-80"
       }`}
-      onMouseOver={onMouseOver}
+      onClick={onClick}
     >
       <div className="flex-1 overflow-hidden rounded-lg shadow-lg hover:shadow-xl">
         <img
