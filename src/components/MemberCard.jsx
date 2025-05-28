@@ -3,7 +3,7 @@ export function MemberCard({ member }) {
     <div className="flex flex-col items-center w-40 h-40 md:w-80 md:h-80">
       <div className="flex-1 overflow-hidden rounded-lg shadow-lg hover:shadow-xl">
         <img
-          src={member.photo}
+          src={member.photo_url}
           alt={member.name}
           className="w-full h-full object-cover scale-100"
         />

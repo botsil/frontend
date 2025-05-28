@@ -1,12 +1,17 @@
+import { useState, useEffect } from "react";
 import { DocumentCard } from "../components/DocumentCard";
-import teste from "../assets/teste.pdf";
+import api from "../services/api";
 
 export default function ArticlesPage() {
-  const articles = [
-    { id: 1, title: "Manual de Robótica", url: teste },
-    { id: 2, title: "Guia de Competição", url: teste },
-    { id: 3, title: "Instruções Técnicas", url: teste },
-  ];
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const response = await api.get("/articles");
+      setArticles(response.data);
+    };
+    fetchArticles();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 pt-10 px-4 md:px-20">
@@ -18,7 +23,7 @@ export default function ArticlesPage() {
           <DocumentCard
             key={article.id}
             title={article.title}
-            documentUrl={article.url}
+            documentUrl={article.article_url}
           />
         ))}
       </div>

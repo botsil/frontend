@@ -1,12 +1,17 @@
+import { useState, useEffect } from "react";
 import { DocumentCard } from "../components/DocumentCard";
-import teste from "../assets/teste.pdf";
+import api from "../services/api";
 
 export default function ManualsPage() {
-  const manuals = [
-    { id: 1, title: "Manual de Robótica", url: teste },
-    { id: 2, title: "Guia de Competição", url: teste },
-    { id: 3, title: "Instruções Técnicas", url: teste },
-  ];
+  const [manuals, setManuals] = useState([]);
+
+  useEffect(() => {
+    const fetchManuals = async () => {
+      const response = await api.get("/manuals");
+      setManuals(response.data);
+    };
+    fetchManuals();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 pt-10 px-4 md:px-20">
@@ -18,7 +23,7 @@ export default function ManualsPage() {
           <DocumentCard
             key={manual.id}
             title={manual.title}
-            documentUrl={manual.url}
+            documentUrl={manual.manual_url}
           />
         ))}
       </div>

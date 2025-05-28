@@ -1,19 +1,17 @@
+import { useState, useEffect } from "react";
 import { MemberCard } from "../components/MemberCard";
-import joao from "../assets/joao.jpg";
-import maria from "../assets/maria.jpg";
-import marcos from "../assets/marcos.jpg";
+import api from "../services/api";
 
 export default function MembersPage() {
-  const members = [
-    { id: 1, name: "João Silva", photo: joao },
-    { id: 2, name: "Maria Souza", photo: maria },
-    { id: 3, name: "Marcos Schlick", photo: marcos },
-    { id: 4, name: "João Souza", photo: joao },
-    { id: 5, name: "Maria Schlick", photo: maria },
-    { id: 6, name: "Marcos Silva", photo: marcos },
-    { id: 7, name: "João Schlick", photo: joao },
-    { id: 8, name: "Maria Schlick", photo: maria },
-  ];
+  const [members, setMembers] = useState([]);
+
+  useEffect(() => {
+    const fetchMembers = async () => {
+      const response = await api.get("/members");
+      setMembers(response.data);
+    };
+    fetchMembers();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 pt-10 px-4 md:px-20">
