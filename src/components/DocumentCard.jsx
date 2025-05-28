@@ -2,7 +2,7 @@ export function DocumentCard({ title, documentUrl }) {
   return (
     <button
       onClick={() => window.open(documentUrl, "_blank")}
-      className="w-40 h-40 md:w-80 md:h-80 flex flex-col items-center transition-transform duration-300 hover:scale-105"
+      className="w-full max-w-[10rem] md:max-w-[20rem] aspect-square flex flex-col items-center transition-transform duration-300 hover:scale-105"
     >
       <div className="flex-1 w-full overflow-hidden rounded-lg shadow-lg hover:shadow-xl bg-white">
         <div className="w-full h-full bg-gray-200 flex items-center justify-center">
