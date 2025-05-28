@@ -1,6 +1,6 @@
 export function MemberCard({ member }) {
   return (
-    <div className="flex flex-col items-center w-40 h-40 md:w-80 md:h-80">
+    <div className="flex flex-col items-center w-full max-w-[10rem] md:max-w-[20rem] aspect-square">
       <div className="flex-1 overflow-hidden rounded-lg shadow-lg hover:shadow-xl">
         <img
           src={member.photo_url}
