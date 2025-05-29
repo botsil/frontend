@@ -96,22 +96,16 @@ export default function Home() {
         </div>
 
         <div className="md:w-[45%] md:ml-auto aspect-square w-full relative">
-          {images.length > 0 ? (
-            images.map((imgSrc, i) => (
-              <img
-                key={i}
-                src={imgSrc}
-                alt={`Carrossel ${i + 1}`}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                  currentImage === i ? "opacity-100" : "opacity-0"
-                } rounded-xl shadow-lg`}
-              />
-            ))
-          ) : (
-            <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full aspect-square flex items-center justify-center">
-              <span>Carregando imagens...</span>
-            </div>
-          )}
+          {images.map((imgSrc, i) => (
+            <img
+              key={i}
+              src={imgSrc}
+              alt={`Carrossel ${i + 1}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                currentImage === i ? "opacity-100" : "opacity-0"
+              } rounded-xl shadow-lg`}
+            />
+          ))}
         </div>
       </div>
     </div>

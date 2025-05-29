@@ -15,7 +15,7 @@ export default function MembersPage() {
   }, []);
 
   return (
-    <PageLayout title="Nossa Equipe">
+    <PageLayout title="Nossa Equipe" subtitle="Conheça mais sobre a gente">
       {members.map((member) => (
         <MemberCard key={member.id} member={member} />
       ))}
