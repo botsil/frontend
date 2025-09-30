@@ -9,28 +9,12 @@ export default function Navbar() {
   return (
     <nav className="bg-slate-900/80 backdrop-blur-md fixed w-full flex justify-between items-center z-50 border-b border-slate-700">
       <div className="flex items-center h-20 ml-4 md:ml-10">
-        <img src={logo} alt="Logo" className="h-[90%]" />
+        <Link to="/" className="h-[90%]">
+          <img src={logo} alt="Logo" className="h-[100%]" />
+        </Link>
       </div>
 
       <div className="hidden md:flex space-x-8 mr-10 font-orbitron font-bold text-xl pr-40">
-        <Link
-          to="/"
-          className="text-slate-200 hover:text-cyan-400 transition-colors duration-300"
-        >
-          Início
-        </Link>
-        <Link
-          to="/articles"
-          className="text-slate-200 hover:text-cyan-400 transition-colors duration-300"
-        >
-          Artigos
-        </Link>
-        <Link
-          to="/manuals"
-          className="text-slate-200 hover:text-cyan-400 transition-colors duration-300"
-        >
-          Manuais
-        </Link>
         <Link
           to="/members"
           className="text-slate-200 hover:text-cyan-400 transition-colors duration-300"
@@ -64,20 +48,6 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
           >
             Início
-          </Link>
-          <Link
-            to="/articles"
-            className="text-slate-100 hover:text-cyan-400 w-full text-center py-3 border-b border-slate-700"
-            onClick={() => setIsOpen(false)}
-          >
-            Artigos
-          </Link>
-          <Link
-            to="/manuals"
-            className="text-slate-100 hover:text-cyan-400 w-full text-center py-3 border-b border-slate-700"
-            onClick={() => setIsOpen(false)}
-          >
-            Manuais
           </Link>
           <Link
             to="/members"
