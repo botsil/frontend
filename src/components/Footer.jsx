@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CodeBracketIcon } from "@heroicons/react/24/outline";
-import BotsilLogo from "./BotsilLogo";
+import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-4">
           <div className="flex items-center space-x-8">
-            <BotsilLogo className="text-3xl" />
+            <img src={logo} alt="Logo" className="max-h-16 w-auto" />
             <a
               href="https://github.com/botsil"
               target="_blank"

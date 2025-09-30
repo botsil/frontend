@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import BotsilLogo from "./BotsilLogo";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="bg-slate-900/80 backdrop-blur-md fixed w-full flex justify-between items-center z-50 border-b border-slate-700">
       <div className="flex items-center h-20 ml-4 md:ml-10">
-        <BotsilLogo className="text-3xl md:text-4xl" />
+        <img src={logo} alt="Logo" className="h-[90%]" />
       </div>
 
       <div className="hidden md:flex space-x-8 mr-10 font-orbitron font-bold text-xl pr-40">
