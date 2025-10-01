@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import api from "../services/api";
+import logo from "../assets/logo_dark.png";
+import blip from "../assets/blip.png";
 
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [images, setImages] = useState([]);
+  const [images_competition_highlight, setImages] = useState([]);
 
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
-        const response = await api.get("/photos");
+        const response = await api.get("/photos/competition_highlight");
         const imageUrls = response.data.map((item) => item.photo_url);
         setImages(imageUrls);
       } catch (error) {
@@ -20,83 +22,90 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (images.length > 0) {
+    if (images_competition_highlight.length > 0) {
       const interval = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % images.length);
+        setCurrentImage(
+          (prev) => (prev + 1) % images_competition_highlight.length
+        );
       }, 3000);
       return () => clearInterval(interval);
     }
-  }, [images]);
+  }, [images_competition_highlight]);
 
   return (
     <div className="min-h-screen pt-10 px-4">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 py-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 py-8 items-center">
         <div className="md:w-[45%]">
-          <h1 className="text-6xl md:text-6xl font-bold mb-4 font-orbitron">
+          <h1 className="text-3xl md:text-6xl font-bold mb-4 font-orbitron">
             Hello, World! 👋
           </h1>
+          <h3 className="text-xl md:text-2xl font-bold mb-4 font-orbitron">
+            Nós somos{" "}
+            <span className="font-extrabold text-2xl md:text-4xl">BOTSIL</span>,
+          </h3>
+          <p className="text-lg md:text-xl">
+            Somos uma equipe de robótica binacional formada por estudantes
+            brasileiros e uruguaios da parceria entre
+            <span className="font-semibold "> IFSul</span> e
+            <span className="font-semibold"> UTEC</span>.
+          </p>
+        </div>
+
+        <div className="md:w-[45%] md:ml-auto aspect-square w-full relative">
+          <img
+            src={logo}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 rounded-xl shadow-lg`}
+          />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 py-8 items-center">
+        <div className="md:w-[45%] md:ml-auto aspect-square w-full relative">
+          <img
+            src={blip}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000  rounded-xl shadow-lg`}
+          />
+        </div>
+        <div className="md:w-[45%]">
           <h3 className="text-4xl md:text-4xl font-bold mb-4 font-orbitron">
-            Somos{" "}
-            <span
-              className="font-extrabold italic bg-gradient-to-r text-transparent bg-clip-text"
-              style={{
-                background:
-                  "linear-gradient(90deg, #009C3B 0%, #FFCB00 30%, #FFFFFF 50%, #0038A8 100%)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",
-              }}
-            >
+            Conheça o{" "}
+            <span className="font-extrabold text-2xl md:text-4xl">BLIP</span> !
+          </h3>
+          <p className="text-lg md:text-xl">
+            <span className="font-bold">BLIP</span> é um acrônimo para{" "}
+            <span className="font-bold">
+              Botsil's Learning & Integrated Pilot
+            </span>{" "}
+            (Piloto de Aprendizagem Integrado da Botsil). Ele é o robozinho
+            símbolo da nossa equipe, sempre pronto para aprender.
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 py-8 items-center">
+        <div className="md:w-[45%]">
+          <h3 className="text-4xl md:text-4xl font-bold mb-4 font-orbitron">
+            Nossa estreia como{" "}
+            <span className="font-extrabold italic bg-gradient-to-r  bg-clip-text">
               BOTSIL
             </span>
             ,
           </h3>
           <p className="text-lg md:text-xl">
-            Uma equipe de robótica binacional formada por estudantes brasileiros
-            e uruguaios da parceria entre
-            <span className="font-semibold "> IFSul</span> e
-            <span className="font-semibold"> UTEC</span>. Unimos talentos de
-            Análise e Desenvolvimento de Sistemas e Engenharia Elétrica para
-            transformar circuitos e códigos em robôs incríveis!
-          </p>
-
-          <p className="text-lg md:text-xl mt-4">
-            Nosso desafio é o{" "}
-            <span className="font-semibold bg-gradient-to-r from-[#009C3B] to-[#FFCB00] text-transparent bg-clip-text">
-              BRABOTS
+            Nossa primeira aparição como equipe foi na 1ª edição do{" "}
+            <span className="font-bold">BRABOTS</span>, competição de robótica
+            do{" "}
+            <span className="font-bold">
+              IFSul Campus Santana do Livramento
             </span>
-            : um torneio onde todas as equipes recebem o mesmo kit (Arduino,
-            motores, rodas) e precisam inovar dentro das regras. Criamos robôs
-            para quatro provas:
-          </p>
-
-          <ul className="mt-4 space-y-2 text-lg md:text-xl list-disc pl-5">
-            <li>
-              <span className="font-semibold">Arrancadão:</span> Corrida
-              eliminatória de velocidade pura!
-            </li>
-            <li>
-              <span className="font-semibold">Salto em Distância:</span> Voo
-              mais longo em três tentativas
-            </li>
-            <li>
-              <span className="font-semibold">Carregamento de Peso:</span>{" "}
-              Resistência com peso crescente
-            </li>
-            <li>
-              <span className="font-semibold">Personalização:</span> Design
-              criativo e organização da equipe
-            </li>
-          </ul>
-
-          <p className="text-lg md:text-xl mt-4">
-            Juntamos tecnologia, criatividade e trabalho em equipe para superar
-            limites - sempre com um pé no Brasil e outro no Uruguai! 🚀🇧🇷🇺🇾
+            , no dia 29/05/2025. Na estreia, conquistamos o{" "}
+            <span className="font-bold">1º lugar</span> nas provas de arrancada,
+            puxar peso, salto em rampa e estética do veículo.
           </p>
         </div>
 
         <div className="md:w-[45%] md:ml-auto aspect-square w-full relative">
-          {images.map((imgSrc, i) => (
+          {images_competition_highlight.map((imgSrc, i) => (
             <img
               key={i}
               src={imgSrc}
