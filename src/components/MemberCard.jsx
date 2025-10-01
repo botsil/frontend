@@ -21,7 +21,7 @@ export function MemberCard({ member }) {
                     href={member.github_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/10 p-1.5 rounded-full hover:scale-110 hover:bg-white transition-all duration-200"
+                    className="bg-white/10 p-1.5 rounded-full hover:scale-110 hover:bg-white/40 transition-all duration-200"
                   >
                     <img src={githubIcon} alt="GitHub" className="w-5 h-5" />
                   </a>
@@ -31,7 +31,7 @@ export function MemberCard({ member }) {
                     href={member.linkedin_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/10 p-1.5 rounded-full hover:scale-110 hover:bg-white transition-all duration-200"
+                    className="bg-white/10 p-1.5 rounded-full hover:scale-110 hover:bg-white/40 transition-all duration-200"
                   >
                     <img
                       src={linkedinIcon}
@@ -45,7 +45,7 @@ export function MemberCard({ member }) {
                     href={member.instagram_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/10 p-1.5 rounded-full hover:scale-110 hover:bg-white transition-all duration-200"
+                    className="bg-white/10 p-1.5 rounded-full hover:scale-110 hover:bg-white/40 transition-all duration-200"
                   >
                     <img
                       src={instagramIcon}
