@@ -14,12 +14,30 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="hidden md:flex space-x-8 mr-10 font-orbitron font-bold text-xl pr-40">
+      <div className="hidden md:flex space-x-8 mr-4 text-2xl pr-10">
+        <Link
+          to="/competitions"
+          className="text-slate-200 hover:text-cyan-400 transition-colors duration-300"
+        >
+          Competições
+        </Link>
+        <Link
+          to="/projects"
+          className="text-slate-200 hover:text-cyan-400 transition-colors duration-300"
+        >
+          Projetos
+        </Link>
         <Link
           to="/members"
           className="text-slate-200 hover:text-cyan-400 transition-colors duration-300"
         >
           Membros
+        </Link>
+        <Link
+          to="/about-us"
+          className="text-slate-200 hover:text-cyan-400 transition-colors duration-300"
+        >
+          Sobre nós
         </Link>
       </div>
 
@@ -50,11 +68,32 @@ export default function Navbar() {
             Início
           </Link>
           <Link
+            to="/competitions"
+            className="text-slate-100 hover:text-cyan-400 w-full text-center py-3"
+            onClick={() => setIsOpen(false)}
+          >
+            Competições
+          </Link>
+          <Link
+            to="/projects"
+            className="text-slate-100 hover:text-cyan-400 w-full text-center py-3"
+            onClick={() => setIsOpen(false)}
+          >
+            Projetos
+          </Link>
+          <Link
             to="/members"
             className="text-slate-100 hover:text-cyan-400 w-full text-center py-3"
             onClick={() => setIsOpen(false)}
           >
             Membros
+          </Link>
+          <Link
+            to="/about-us"
+            className="text-slate-100 hover:text-cyan-400 w-full text-center py-3"
+            onClick={() => setIsOpen(false)}
+          >
+            Sobre nós
           </Link>
         </div>
       </div>
