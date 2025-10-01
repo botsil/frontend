@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
+import CompetitionsPage from "./pages/CompetitionsPage.jsx";
+import CompetitionDetailsPage from "./pages/CompetitionDetailsPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import MembersPage from "./pages/MembersPage.jsx";
 import ProjectsPage from "./pages/ProjectsPage.jsx";
@@ -28,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUsPage />,
+      },
+      {
+        path: "/competitions",
+        element: <CompetitionsPage />,
+      },
+      {
+        path: "/competitions/:id",
+        element: <CompetitionDetailsPage />,
       },
     ],
   },

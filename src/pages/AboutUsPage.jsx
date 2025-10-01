@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import api from "../services/api";
-import logo from "../assets/logo_dark.png";
 
 export default function AboutUsPage() {
   const [currentImage, setCurrentImage] = useState(0);
