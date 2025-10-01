@@ -14,7 +14,7 @@ export default function MembersPage() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-10 px-4 md:px-20">
+    <div className="min-h-screen pt-10 px-4 md:px-20 mt-5">
       <div className="text-center pb-10">
         <h1 className="text-4xl md:text-6xl font-bold font-orbitron">
           Nossa Equipe

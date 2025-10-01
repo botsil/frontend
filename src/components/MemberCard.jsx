@@ -5,7 +5,7 @@ import { UserCircleIcon } from "@heroicons/react/24/outline";
 
 export function MemberCard({ member }) {
   return (
-    <div className="flex flex-col items-center w-full max-w-[10rem] md:max-w-[20rem] aspect-square group">
+    <div className="flex flex-col items-center w-full max-w-[10rem] md:max-w-[20rem] h-48 md:h-80 group">
       <div className="relative flex-1 w-full overflow-hidden rounded-lg shadow-lg hover:shadow-xl border border-slate-600 transition-all duration-300 group-hover:border-cyan-400">
         {member.photo_url ? (
           <>
